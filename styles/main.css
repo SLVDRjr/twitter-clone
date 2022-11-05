@@ -1,0 +1,619 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.middle-section {
+  border-right: 1px solid rgb(241, 226, 226);
+  max-width: 600px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  height: 53px;
+  align-items: center;
+  padding: 0 16px;
+  position: fixed;
+  top: 0;
+  left: 73px;
+  right: 0;
+  max-width: 599px;
+  border-right: 1px solid rgb(241, 226, 226);
+  background-color: white;
+  z-index: 999;
+}
+
+@media (min-width: 768px) {
+  .main-header {
+    left: 150px;
+  } 
+
+  .container {
+    padding-left: 77px;
+  }
+}
+
+
+@media (min-width: 1315px) {
+  .main-header {
+    left: 300px;
+  }  
+
+  .container {
+    padding-left: 227px;
+  }
+}
+
+.top-tweets-icon {
+  width: 18px;
+}
+
+.home {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main-topbar {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgb(233, 232, 232);
+}
+
+.main-tweet-input-bar {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture-container {
+  position: relative;
+}
+
+.profile-picture-overlay {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background-color: black;
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+  z-index: -1;
+}
+
+.profile-picture {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.profile-picture:hover {
+  opacity: 0.8;
+}
+
+.main-tweet-input {
+  font-size: 18px;
+  color: rgb(65, 63, 63);
+  border: none;
+  margin-left: 12px;
+  outline: none;
+}
+
+.main-tweet-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 54px;
+  margin-top: 16px;
+}
+
+.main-tweet-icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container-1, .icon-container-2 {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.icon-container-1:hover {
+  background-color: rgb(182, 209, 226);
+}
+
+.icon-container-2:hover {
+  background-color: rgb(214, 211, 211);
+}
+
+.tooltips {
+  position: relative;
+}
+
+.icon-tooltip {
+  position: absolute;
+  bottom: -16px;
+  font-size: 11px;
+  background-color: rgb(73, 73, 73);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.15s ease-out 0s;
+  white-space: nowrap;
+  pointer-events: none;
+} 
+
+.tooltips:hover .icon-tooltip {
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.main-tweet-icons img {
+  width: 20px;
+}
+
+.main-tweet-button {
+  background-color: rgba(29, 155, 240, 0.7);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.main-tweet-button:hover {
+  background-color: rgb(0, 102, 255);
+}
+
+.show-tweets {
+  display: flex;
+  justify-content: center;
+  color: rgb(29, 155, 240);
+  padding: 16px 0;
+  border-bottom: 1px solid rgb(233, 232, 232);
+  max-width: 600px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.show-tweets:hover {
+  background-color: rgb(233, 232, 232);
+}
+
+.tweet-grid {
+  padding: 16px 16px;
+  border-bottom: 1px solid rgb(233, 232, 232);
+}
+
+.tweet-about-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 8px 27px;
+}
+
+.tweet-about {
+  display: flex;
+  align-items: center;
+}
+
+.message-icon, .dismiss-icon, .verified-icon {
+  width: 16px;
+}
+
+.tweet-topic-container, .profile-picture-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.tweet-topic {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(82, 82, 82);
+  margin-left: 6px;
+}
+
+.tweet-topic-container:hover .tweet-topic-info, .profile-picture-container:hover .profile-info {
+  opacity: 1;
+}
+
+.tweet-topic-info, .profile-info {
+  position: absolute;
+  top: 30px;
+  left: -100px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  background-color: white;
+  z-index: 100;
+  transition: opacity 0.15s 0.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fox-news-at {
+  font-size: 14px;
+  color: rgb(82, 82, 82);
+  margin-bottom: 16px;
+}
+
+.topic-sub-title {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.topic-description {
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 16px;
+}
+
+.topic-button {
+  margin-top: 16px;
+  background-color: white;
+  border: 1px solid rgb(241, 226, 226);
+  border-radius: 20px;
+  padding: 12px 0;
+  font-size: 18px;
+}
+
+.middle-dot {
+  font-size: 20px;
+  color: rgb(82, 82, 82);
+  margin: 0 4px;
+}
+
+.tweet-more-link, .fox-news-link {
+  text-decoration: none;
+}
+
+.tweet-more {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(29, 155, 240);
+}
+
+.tweet-info-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+
+.top-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.fox-news-description {
+  font-size: 14px;
+}
+
+.bot-info {
+  display: flex;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.following-count, .followers-count {
+  font-weight: bold;
+}
+
+.following-stats {
+  margin-right: 16px;
+}
+
+.tweet-channel-info-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.tweet-channel-info {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.channel-name {
+  font-weight: bold;
+  color: rgb(48, 48, 48);
+}
+
+.channel-at {
+  color: rgb(82, 82, 82);
+  margin-left: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.time {
+  color: rgb(82, 82, 82);
+}
+
+.tweet-title {
+  color: rgb(48, 48, 48);
+  font-size: 15px;
+}
+
+.thumbnail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-left: 52px;
+  margin-top: 16px;
+}
+
+.thumbnail {
+  cursor: pointer;
+}
+
+.thumbnail-1 {
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.thumbnail-info {
+  padding: 16px 10px;
+  border: 1px solid rgb(194, 182, 182);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.thumbnail-link {
+  font-size: 15px;
+  color:rgb(82, 82, 82);
+  text-decoration: none;
+}
+
+.thumbnail-title {
+  color: rgb(48, 48, 48);
+  margin-top: 4px;
+  line-height: 20px;
+}
+
+.thumbnail-stats-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.thumbnail-stats {
+  display: flex;
+  align-items: center;
+}
+
+.thumbnail-stats img {
+  width: 20px;
+}
+
+.thumbnail-stats p {
+  font-size: 14px;
+  margin-left: 6px;
+  color: rgb(82, 82, 82);
+}
+
+.thumbnail-2 {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.show-thread {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid rgb(233, 232, 232);
+}
+
+.show-thread:hover {
+  background-color: rgb(233, 232, 232);
+}
+
+.profile-picture-thread {
+  width: 32px;
+  border-radius: 50%;
+}
+
+.show-thread p {
+  color:rgb(29, 155, 240);
+  margin-left: 20px;
+}
+
+.who-to-follow-container {
+  padding: 16px;
+  border-bottom: 1px solid rgb(233, 232, 232);
+}
+
+.who-to-follow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.who-to-follow-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.who-to-follow-list-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  margin-top: 16px;
+}
+
+.who-to-follow-list-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.who-to-follow-channel-name {
+  color: rgb(48, 48, 48);
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.who-to-follow-verified-icon {
+  width: 18px;
+}
+
+.who-to-follow-channel-at {
+  color: rgb(82, 82, 82);
+}
+
+.channel-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.channel-info {
+  display: flex;
+}
+
+.follow-button {
+  background-color: rgb(15, 20, 25);
+  color: white;
+  padding: 6px 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+  transition: background-color 0.15s;
+  cursor: pointer;
+}
+
+.follow-button:hover {
+  background-color: rgb(48, 48, 48);
+}
+
+.who-to-follow-channel-title {
+  color: rgb(48, 48, 48);
+}
+
+.alt-layout-container {
+  padding-left: 50px;
+}
+
+.alt-layout {
+  border: none;
+  padding: 0;
+}
+
+.alt-layout-title {
+  margin: 0;
+}
+
+.twitter-likes {
+  padding: 0 16px;
+  max-width: 600px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.twitter-likes-icon {
+  width: 68px;
+  display: block;
+  margin: 0 auto;
+}
+
+.twitter-likes-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.twitter-likes-description {
+  color: rgb(83, 100, 113);
+  margin-top: 12px;
+  line-height: 20px;
+}
+
+.twitter-likes-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.twitter-likes-bar-left, .twitter-likes-bar-right {
+  display: flex;
+  align-items: center;
+}
+
+.heart-colored-container {
+  background-color: rgb(218, 186, 201);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.gray-colored-container {
+  background-color: rgb(214, 211, 211);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.heart-colored-container:hover, .gray-colored-container:hover {
+  background-color: rgb(182, 209, 226);
+}
+
+.heart-colored {
+  width: 16px;
+}
+
+.gray-colored-container img {
+  width: 16px;
+}
+
+.twitter-likes-bar-left p {
+  color: rgb(48, 48, 48);
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.option {
+  border: 1px solid rgb(29, 155, 240);
+  border-radius: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color:rgb(29, 155, 240);
+  padding: 6px 0;
+  margin-top: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.option:hover {
+  background-color: rgb(182, 209, 226);
+}
+
+.votes {
+  display: flex;
+  align-items: center;
+  color:rgb(82, 82, 82);
+  margin-top: 8px;
+}

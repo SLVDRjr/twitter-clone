@@ -1,0 +1,26 @@
+.footer {
+  padding: 16px;
+  border-radius: 20px;
+  margin-top: 16px;
+  font-size: 14px;
+  color: rgb(83, 100, 113);
+}
+
+.footer p {
+  margin-top: 4px;
+}
+
+.footer-link {
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 4px;
+}
+
+.footer-link a {
+  text-decoration: none;
+  color: rgb(83, 100, 113);
+}
+
+.footer-link a:hover {
+  text-decoration: underline;
+}
